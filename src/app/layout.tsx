@@ -1,22 +1,19 @@
-import "./globals.css"
-import { LanguageProvider } from "@/context/LanguageContext"
-import BottomNav from "@/components/BottomNav"
-import AccessibilityBar from "@/components/AccessibilityBar"
+import "./globals.css";
+import { LanguageProvider } from "@/context/LanguageContext";
 
-export const metadata = { title: "Health Plus Care", description: "SHA, M-Pesa, Booking, Video Call" }
+export const metadata = {
+  title: "Health Plus Care",
+  description: "SHA + M-Pesa Hospital Booking",
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="pb-20 bg-[#f5f5f0]">
+      <body>
         <LanguageProvider>
-          <div className="max-w-md mx-auto bg-white min-h-screen shadow-2xl">
-            <AccessibilityBar />
-            {children}
-            <BottomNav />
-          </div>
+          {children}
         </LanguageProvider>
       </body>
     </html>
-  )
+  );
 }
