@@ -1,18 +1,15 @@
-import './globals.css'
-import { LanguageProvider } from '@/context/LanguageContext'
-
-export const metadata = {
-  title: 'Health Plus Care - Afya Plus',
-  description: 'Quality Health Care for Everyone, Everywhere',
-  manifest: '/manifest.json',
-  themeColor: '#0a66ff',
-}
+import "./globals.css"
+import { LanguageProvider } from "@/context/LanguageContext"
+import BottomNav from "@/components/BottomNav"
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>
-        <LanguageProvider>{children}</LanguageProvider>
+      <body className="pb-16">
+        <LanguageProvider>
+          {children}
+          <BottomNav />
+        </LanguageProvider>
       </body>
     </html>
   )

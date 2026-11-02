@@ -1,23 +1,5 @@
 'use client'
 import { useLang } from '@/context/LanguageContext'
-
-export default function AccessibilityBar() {
-  const { fontSize, setFontSize, lang, setLang } = useLang()
-
-  return (
-    <div className="bg-black text-white p-2 flex justify-between text-xs sticky top-0 z-50">
-      <div className="flex gap-2 items-center">
-        <button onClick={() => setFontSize(fontSize + 1)} className="bg-white text-black px-2 py-1 rounded">A+</button>
-        <button onClick={() => setFontSize(Math.max(12, fontSize - 1))} className="bg-white text-black px-2 py-1 rounded">A-</button>
-        <button className="border px-2 py-1 rounded">High Contrast</button>
-        <button className="border px-2 py-1 rounded">🔊 Voice</button>
-      </div>
-      <select value={lang} onChange={(e) => setLang(e.target.value)} className="text-black rounded px-1">
-        <option value="en">EN</option>
-        <option value="sw">SW</option>
-        <option value="ki">Kikuyu</option>
-        <option value="ksl">KSL</option>
-      </select>
-    </div>
-  )
-}
+export default function AccessibilityBar(){
+const{fontSize,setFontSize,lang,setLang}=useLang()
+return(<div className="bg-black text-white p-2 flex justify-between text-xs sticky top-0 z-50"><div className="flex gap-2 items-center"><button onClick={()=>setFontSize(fontSize+1)} className="bg-white text-black px-2 py-1 rounded">A+</button><button onClick={()=>setFontSize(Math.max(12,fontSize-1))} className="bg-white text-black px-2 py-1 rounded">A-</button><button className="border px-2 py-1 rounded">High Contrast</button><button className="border px-2 py-1 rounded">🔊 Voice</button></div><select value={lang} onChange={e=>setLang(e.target.value)} className="text-black rounded px-1"><option value="en">EN</option><option value="sw">SW</option><option value="ki">Kikuyu</option><option value="ksl">KSL</option></select></div>)}
